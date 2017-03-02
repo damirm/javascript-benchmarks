@@ -1,16 +1,7 @@
 'use strict';
 
 const _ = require('lodash');
-
-function bench(title, fn, n, args) {
-    console.time(title);
-
-    for (let i = 0; i < n; ++i) {
-        fn.apply(null, args);
-    }
-
-    console.timeEnd(title);
-}
+const bench = require('./bench');
 
 function nativeFor(arr) {
     for (let i = arr.length - 1; i >= 0; --i) {
